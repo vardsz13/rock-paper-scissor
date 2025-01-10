@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+
+    <script>
+
+        // Object = grous multiple value together
+ /*
+        const products = {
+            name: 'socks',
+            price: 1090,
+        };
+
+        console.log(typeof products);
+        console.log(products.name);
+        console.log(products.price);       
+        
+        products.name = 'cotton socks';
+        console.log(products); 
+
+        products.new = true;
+        console.log(products);
+
+        delete products.new;
+        console.log(products);
+*/
+
+        const product2 = {
+            name: 'shirt',
+            'delivery-time' : '1 day',
+            rating: {
+                stars: 4.5,
+                count: 87
+            },
+
+            fun: function function1 () {
+                console.log('function inside object')
+            }
+
+        };
+
+        console.log(product2);
+        console.log(product2['delivery-time']);
+
+        
+        console.log(product2.rating.count);
+        product2.fun();
+
+        //JSON (JavaScript Object Notation) - Universal, To sent data between the computer
+
+        //Convert a JavaScript Object -> JSON
+        console.log(JSON.stringify(product2));
+
+        // Convert to JSON -> JavaScript Object
+        const jsonString = JSON.stringify(product2);
+        console.log(JSON.parse(jsonString));
+
+        //Local Storage
+
+        localStorage.setItem('message', 'hello');
+
+
+        console.log(localStorage.getItem('message'));
+
+
+    </script>
+    
+</body>
+</html>
