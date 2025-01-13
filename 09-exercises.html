@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Modal Object</title>
+  </head>
+  <body>
+    <button class="js-9a-button">9a</button>
+
+    <button class="js-heads-button" onclick="choseButton('heads')">
+      heads
+    </button>
+    <p class="js-chose-button"></p>
+
+    <button class="js-tails-button" onclick="choseButton('tails')">
+      tails
+    </button>
+
+    <input
+      class="js-name-input"
+      placeholder="Name"
+      onkeydown="handleOnKeyDown(event)"
+    />
+    <button onclick="displayName()">Submit</button>
+    <p class="js-name-display"></p>
+  </body>
+  <script>
+    function displayName() {
+      const inputElement = document.querySelector(".js-name-input");
+      let name = inputElement.value;
+
+      document.querySelector(
+        ".js-name-display"
+      ).innerHTML = `Your name is: ${name}`;
+    }
+
+    function handleOnKeyDown(event) {
+      if (event.key === "Enter") {
+        displayName();
+      }
+    }
+
+    document.querySelector(".js-9a-button").innerHTML = "9b done!";
+
+    function choseButton(chose) {
+      document.querySelector(
+        ".js-chose-button"
+      ).innerHTML = `You chose: ${chose}`;
+    }
+  </script>
+</html>
