@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <button class="js-subscribe-button" onclick="subscribeButton() ">
+      Subscribe
+    </button> -->
+
+    <input
+      class="js-cost-input"
+      placeholder=" Cost of order"
+      onkeydown=" handleOnKeyDown() "
+    />
+    <button class="js-calculate-button" onclick="calculateTotal()">
+      Calculate
+    </button>
+
+    <p class="js-total-cost"></p>
+  </body>
+  <script>
+    // function subscribeButton() {
+    //   const buttonElement = document.querySelector(".js-subscribe-button");
+
+    //   if (buttonElement.innerHTML === "Subscribe") {
+    //     buttonElement.innerHTML = "Subscribed";
+    //   } else {
+    //     buttonElement.innerHTML = "Subscribe";
+    //   }
+    // }
+
+    function calculateTotal() {
+      const inputElement = document.querySelector(".js-cost-input");
+      let cost = Number(inputElement.value);
+
+      if (cost < 40) {
+        cost = cost + 10;
+      }
+      console.log(cost);
+      console.log(typeof cost);
+
+      document.querySelector(".js-total-cost").innerHTML = `P${cost}`;
+    }
+
+    function handleOnKeyDown() {
+      const eventKey = event.key;
+
+      if (eventKey === "Enter") {
+        calculateTotal();
+      }
+    }
+  </script>
+</html>
